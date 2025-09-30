@@ -1,15 +1,12 @@
-#Delete your "greetings boots" message.
-#Write a new function called get_book_text. It takes a filepath as input and returns the contents of the file as a string.
-#Write a main function that uses get_book_text with the relative path to your frankenstein.txt file to print the entire contents of the book to the console.
-#Call main() at the bottom of your file to execute your program.
-#Test your program!
+from stats import get_word_count
+
 def main():
     get_book_text()
+    get_word_count()
 
 def get_book_text():
-    with open('./books/frankenstein.txt') as book:
+    with open('./books/frankenstein.txt', 'r') as book:
         file_contents = book.read()
-        print(file_contents)
-
-
+        book.close()
+        return file_contents
 main()
