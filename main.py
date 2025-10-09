@@ -12,10 +12,20 @@ def main():
     print("----------- Word Count ----------")
     print((f"Found {word_count} total words"))
     print("--------- Character Count -------")
-    print (sorted_chars)
+    for charDict in sorted_chars:
+        char = charDict['char']
+        totalChar = charDict['num']
+        if char.isalpha() is True:
+            print(f'{char}: {totalChar}')
+        else:
+            pass
+    print("============= END ===============")
+
 
 def get_book_text():
     with open('./books/frankenstein.txt', 'r') as book:
         fileContents = book.read()
     return fileContents
-main()
+
+if __name__ == "__main__":
+    main()

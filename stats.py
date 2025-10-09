@@ -16,12 +16,10 @@ def sort_on(items):
     return items['num']
 
 def sort_dict(char_count):
-    charDictList = {}
     sortedList = []
-    for key in char_count:
-        charDictList.update({"char": key, "num": char_count[key]})
-        sortedList.append(charDictList)
-        sortedList.sort(reverse=True, key = sort_on)
-        return sortedList
+    for char, num in char_count.items():
+        sortedList.append({'char': char, 'num': num})
+    sortedList.sort(reverse=True, key = sort_on)
+    return sortedList
     
     #dictionary format - {"char": "b", "num": 4868}
